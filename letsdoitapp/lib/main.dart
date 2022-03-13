@@ -4,6 +4,7 @@ import 'package:common_flutter_service/service_init.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'modules/home_page/home.dart';
 import 'modules/login_page/login_controller.dart';
 
 void main() {
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       initialRoute: NavigationConstants.ROOT,
       routes: {
         '/': (context) => LoginPage(),
+        '/home':(context)=>HomePage()
       },
       theme: ThemeData(
         // This is the theme of your application.

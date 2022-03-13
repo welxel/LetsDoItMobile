@@ -118,15 +118,7 @@ class LoginPage extends StatelessWidget {
                   margin: EdgeInsets.only(left: 40, right: 40),
                   child: FlatButton(
                     onPressed: () async{
-                     var response=await ApiHandler.apiPost(url: "https://localhost:44307/api/account/login", parameter: {
-                        "email":emailCont.text,
-                        "password":passwordCont.text
-                      });
-                     if(response["status"]==1){
-                       print(response["data"]);
-                    loginController.loginResponse.value=LoginResponse.fromJson(response["data"]);
-                    print(loginController.loginResponse.value.name);
-                     }
+                    await loginController.loginMessage(emailCont.text, passwordCont.text);
                     },
                     color: colors,
                     shape: RoundedRectangleBorder(
